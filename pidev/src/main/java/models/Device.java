@@ -1,10 +1,10 @@
 package models;
 
 public class Device {
-    private String deviceName;
-    private int gpioPin;
-    private int brightness;
-    private int pixels;
+    public String deviceName;
+    public int gpioPin;
+    public int brightness;
+    public int pixels;
     public Device(String deviceName, int gpioPin, int brightness, int pixels){
         this.deviceName = deviceName;
         this.gpioPin = gpioPin;
@@ -19,6 +19,23 @@ public class Device {
                         GPIO: %d
                         Brightness: %d
                         Pixels: %d""",deviceName, gpioPin, brightness,pixels);
+    }
+
+
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
+
+    public void setGpioPin(int gpioPin) {
+        this.gpioPin = gpioPin;
+    }
+
+    public void setBrightness(int brightness) {
+        this.brightness = brightness;
+    }
+
+    public void setPixels(int pixels) {
+        this.pixels = pixels;
     }
 
     public String getDeviceName() {
