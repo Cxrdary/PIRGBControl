@@ -1,15 +1,23 @@
 package led.lightstrip.scrum5.pidev;
 
-import models.Device;
-
 public class factory {
+    String LedType;
+    Device device;
+
+    Device factory(String LedType) {
+
+        this.LedType = LedType;
+
+        return createDevice(LedType);
+    }
+
 
 
     // createDevice() takes a string and returns a Device object
 
     public Device createDevice(String s) {
 
-        if( s== "neopixel"){
+        if( s == "neopixel"){
             //default values
             return new neopixel();
 

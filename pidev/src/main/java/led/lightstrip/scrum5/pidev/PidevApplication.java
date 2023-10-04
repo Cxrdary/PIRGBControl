@@ -1,6 +1,5 @@
 package led.lightstrip.scrum5.pidev;
 
-import models.Device;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -13,15 +12,15 @@ public class PidevApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PidevApplication.class, args);
 
+		factory factory = new factory();
+		Device device = factory.factory("neopixel");
 
-		// testing factory
-		Device myDevice = new factory().createDevice("neopixel");
-		myDevice.setDeviceName("DOOBEE");
-		myDevice.setGpioPin(18);
-		myDevice.setBrightness(22);
-		myDevice.setPixels(33);
-		System.out.println(myDevice.toString());
+		device.setDeviceName("RASPBERRIES");
+		device.setGpioPin(22);
+		device.setBrightness(255);
+		device.setPixels(22);
 
+		System.out.println(device.toString());
 
 
 
