@@ -1,8 +1,6 @@
 package led.lightstrip.scrum5.pidev;
 
-import models.Device;
-
-public class neopixel extends models.Device {
+public class neopixel extends Device {
 
     // need to make classes for different light strip types
 

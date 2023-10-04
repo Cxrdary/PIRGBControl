@@ -1,4 +1,4 @@
-package models;
+package led.lightstrip.scrum5.pidev;
 
 public class Device {
     public String deviceName;
@@ -55,4 +55,6 @@ public class Device {
 
 
     }
+
+
 }
