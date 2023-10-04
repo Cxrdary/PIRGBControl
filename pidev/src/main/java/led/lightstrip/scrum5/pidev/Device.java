@@ -1,9 +1,6 @@
 package led.lightstrip.scrum5.pidev;
 
 public class Device {
-
-
-
     public String deviceName;
     public int gpioPin;
     public int brightness;
@@ -55,21 +52,17 @@ public class Device {
     }
 
     public int getPixels() {
-        return pixels;
-
-
+        return this.pixels;
     }
-
     public void begin(){
         System.out.println("Begin");
     }
 
     public void show(){
         //this is where we need the led_strip object code
-        //
+        // that diozero library has somewhere
         System.out.println("Show");
     }
-
 
     public void play_pattern1() {
         System.out.println("Playing pattern 1");
