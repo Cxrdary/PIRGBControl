@@ -3,13 +3,17 @@ package led.lightstrip.scrum5.pidev;
 public class neopixel extends Device {
 
     // need to make classes for different light strip types
-
+    // this is just for neopixel;
     // default values
-    public neopixel() {
+    public neopixel()
+    {
         super("neopixel", 18, 255, 30);
+        System.out.println("Neopixel created");
+
     }
 
 
+    @Override
     public void play_pattern1 (){
         System.out.println("Playing pattern 1");
         // led_strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL, LED_STRIP);
@@ -24,6 +28,7 @@ public class neopixel extends Device {
         // for (int i = 0; i < led_strip.numPixels(); i++) {
     }
 
+    @Override
     public void play_pattern2 (){
         System.out.println("Playing pattern 2");
         // led_strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL, LED_STRIP);
