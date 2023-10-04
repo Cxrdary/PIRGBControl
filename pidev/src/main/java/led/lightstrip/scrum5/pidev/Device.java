@@ -1,6 +1,9 @@
 package led.lightstrip.scrum5.pidev;
 
 public class Device {
+
+
+
     public String deviceName;
     public int gpioPin;
     public int brightness;
@@ -11,6 +14,7 @@ public class Device {
         this.brightness = brightness;
         this.pixels = pixels;
     }
+
     @Override
     public String toString() {
         return String.format("""
@@ -56,5 +60,22 @@ public class Device {
 
     }
 
+    public void begin(){
+        System.out.println("Begin");
+    }
 
+    public void show(){
+        //this is where we need the led_strip object code
+        //
+        System.out.println("Show");
+    }
+
+
+    public void play_pattern1() {
+        System.out.println("Playing pattern 1");
+    }
+
+    public void play_pattern2() {
+        System.out.println("Playing pattern 2");
+    }
 }
