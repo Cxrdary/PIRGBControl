@@ -3,10 +3,7 @@ package led.lightstrip.scrum5.pidev.controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import javafx.scene.paint.Color;
 
 public class MVNWController {
 
@@ -24,13 +21,32 @@ public class MVNWController {
     private ColorPicker cp3;
 
 
-
     @FXML
     public void initialize() {
-        // Initialize the ColorPickers with default colors
-        cp1.setValue(null);
-        cp2.setValue(null);
-        cp3.setValue(null);
+        cp1.setOnAction(event -> {
+            javafx.scene.paint.Color selectedColor = cp1.getValue();
+            String hexValue = String.format("#%02X%02X%02X",
+                    (int) (selectedColor.getRed() * 255),
+                    (int) (selectedColor.getGreen() * 255),
+                    (int) (selectedColor.getBlue() * 255));
+            System.out.println("Selected color hex value: " + hexValue);
+        });
+        cp2.setOnAction(event -> {
+            javafx.scene.paint.Color selectedColor = cp2.getValue();
+            String hexValue = String.format("#%02X%02X%02X",
+                    (int) (selectedColor.getRed() * 255),
+                    (int) (selectedColor.getGreen() * 255),
+                    (int) (selectedColor.getBlue() * 255));
+            System.out.println("Selected color hex value: " + hexValue);
+        });
+        cp3.setOnAction(event -> {
+            javafx.scene.paint.Color selectedColor = cp3.getValue();
+            String hexValue = String.format("#%02X%02X%02X",
+                    (int) (selectedColor.getRed() * 255),
+                    (int) (selectedColor.getGreen() * 255),
+                    (int) (selectedColor.getBlue() * 255));
+            System.out.println("Selected color hex value: " + hexValue);
+        });
 
         // Initialize the Buttons with event handlers
         btn1.setOnAction(event -> handleButton1Action());
@@ -55,6 +71,22 @@ public class MVNWController {
     public void handleButton3Action() {
         // Handle the action for btn3 here
         System.out.println("Setting Color To Blue");
+    }
+
+    @FXML
+    public String handleCP1Action(){
+        return cp1.getValue().toString();
+    }
+    @FXML
+    public String handleCP2Action(){
+        return cp2.getValue().toString();
+    }
+    @FXML
+    public void handleCP3Action(){
+        c = cp3.getValue();
+        System.out.println(c.getRed());
+        // return cp3.getValue().toString();
+
     }
 }
 
