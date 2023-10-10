@@ -73,20 +73,5 @@ public class MVNWController {
         System.out.println("Setting Color To Blue");
     }
 
-    @FXML
-    public String handleCP1Action(){
-        return cp1.getValue().toString();
-    }
-    @FXML
-    public String handleCP2Action(){
-        return cp2.getValue().toString();
-    }
-    @FXML
-    public void handleCP3Action(){
-        c = cp3.getValue();
-        System.out.println(c.getRed());
-        // return cp3.getValue().toString();
-
-    }
 }
 
