@@ -1,6 +1,6 @@
 package led.lightstrip.scrum5.pidev.controllers;
 
-import models.Device;
+import led.lightstrip.scrum5.pidev.Device;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
