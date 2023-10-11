@@ -59,10 +59,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.diozero/diozero-distribution -->
 		<dependency>
-			<groupId>com.diozero</groupId>
-			<artifactId>diozero-core</artifactId>
-			<version>1.3.5</version>
+		    <groupId>com.diozero</groupId>
+		    <artifactId>diozero-distribution</artifactId>
+		    <version>1.3.5</version>
+		    <type>pom</type>
 		</dependency>
 	</dependencies>
 
