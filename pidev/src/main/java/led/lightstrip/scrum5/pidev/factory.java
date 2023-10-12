@@ -6,6 +6,8 @@ public class factory {
 
     Device factory(String LedType) {
 
+        System.out.println("factory constructor called");
+
         this.LedType = LedType;
 
         return createDevice(LedType);
