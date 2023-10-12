@@ -4,7 +4,7 @@ public class factory {
     String LedType;
     Device device;
 
-    Device factory(String LedType) {
+    public Device factory(String LedType) {
 
         System.out.println("factory constructor called");
 
