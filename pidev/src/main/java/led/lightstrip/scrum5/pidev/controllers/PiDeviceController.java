@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 public class PiDeviceController {
     int deviceGpioPin = 18;
-    int deviceBrightness =255;
+    int deviceBrightness = 255;
     int devicePixels = 22;
     LedDriverInterface led_driver = new WS281x(deviceGpioPin, deviceBrightness, devicePixels);
     @Async
@@ -24,17 +24,26 @@ public class PiDeviceController {
         System.out.println("Connecting to device");
         return true;
     }
-    @GetMapping("/devices/setRed")
-    public void setRed(){
-        for (int i=0; i<256; i+=2) {
+    @PostMapping("/devices/setColor")
+    public void setColor(int red, int green, int blue){
             for (int pixel=0; pixel<led_driver.getNumPixels(); pixel++) {
-                led_driver.setRedComponent(pixel, i);
+                led_driver.setRedComponent(pixel, red);
+                led_driver.setGreenComponent(pixel, green);
+                led_driver.setBlueComponent(pixel, blue);
             }
-
             led_driver.render();
             PixelAnimations.delay(20);
-        }
     }
+     /* @PostMapping("/devices/setRed")
+    public void setRed(){
+        for (int pixel=0; pixel<led_driver.getNumPixels(); pixel++) {
+            led_driver.setRedComponent(pixel, 255);
+            led_driver.setGreenComponent(pixel, 1);
+            led_driver.setBlueComponent(pixel, 1);
+        }
+        led_driver.render();
+        PixelAnimations.delay(20);
+    } */
     @Async
     @GetMapping("/devices/disconnect")
     public boolean disconnect() {
